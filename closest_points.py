@@ -96,18 +96,18 @@ def find_closest_points(p, y):
 		else:
 			y_r.append(point) 
 
-	cloesest_pair_left = find_closest_points(p_l, y_l)
-	cloesest_pair_right = find_closest_points(p_r, y_r)
+	closest_pair_left = find_closest_points(p_l, y_l)
+	closest_pair_right = find_closest_points(p_r, y_r)
 
-	d_left = distance(cloesest_pair_left[0], cloesest_pair_left[1])
-	d_right = distance(cloesest_pair_right[0], cloesest_pair_right[1])
+	d_left = distance(closest_pair_left[0], closest_pair_left[1])
+	d_right = distance(closest_pair_right[0], closest_pair_right[1])
 	 
 	if d_right < d_left:
 		shorted_distance = d_right
-		closest_pair = cloesest_pair_right
+		closest_pair = closest_pair_right
 	else:
 		shorted_distance = d_left
-		closest_pair = cloesest_pair_left
+		closest_pair = closest_pair_left
 	
 	y_prime = [pt for pt in y if abs(pt[0] - p_l[-1][0]) <= shorted_distance]
 	
