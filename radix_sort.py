@@ -40,15 +40,17 @@ def r_sort(a):
 
 	# enumerate through each sublist. Each sublist 
 	# contains all the numbers of equal digit lengths 
-	for p, sub_list in enumerate(a_list):
-
-		# set b to be an empty list the same size as this sublist 
-		b = [None] * len(sub_list)
+	for p in range(len(a_list)):
 
 		# itterate from len(elements in this sublist) to 0
 		# to be able to access numbers from the least significant
 		# to the most significant
-		for d in reversed(range(len(str(sub_list[0])))):
+		for d in reversed(range(len(str(a_list[p][0])))):
+
+			sub_list = a_list[p]
+
+			# set b to be an empty list the same size as this sublist 
+			b = [None] * len(sub_list)
 
 			# for this digit index d, we count all occurances
 			# of the numbers 0-9. at the end of this loop, c[i] will 
@@ -72,12 +74,12 @@ def r_sort(a):
 			for j in reversed(sub_list):
 				b[c[int(str(j)[d])] - 1] = j
 				c[int(str(j)[d])] = c[int(str(j)[d])] - 1
-
+			
 			# zero out c for the next itteration
 			c = zeros()
 
-		# replace this sublist with the newly sorted list b
-		a_list[p] = b
+			# replace this sublist with the newly sorted list b
+			a_list[p] = b
 
 	# from 0...max_number_len check if this number is a key in the a_dict. 
 	# the value will be the index of a_list. mergeing in this manner is 
@@ -90,37 +92,7 @@ def r_sort(a):
 
 	return final_list
 
-a = [1, 11, 111, 2, 22, 222, 3, 321, 33, 333, 54, 4, 44, 444, 5, 55, 555]
-
+a = [2,11,8,222,16,5,132,45,1,3,321,333,32,444,14,555,62,412,111,123]
 l = r_sort(a)
 print l
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
