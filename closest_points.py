@@ -122,8 +122,6 @@ def find_closest_points(p, y):
 			i = i + 1
 	return closest_pair
 
-	
-
 q = [(1,5), (8,2), (1,1), (12,6), (6,6), (4,2), (1.1, 1.2), (11, 10), (10,10), (2,4), (0,0), (1,3), (3,5), (5,3), (2,7), (7,9), (.5, .5), (1,9)]
 
 # presort the list of points q 
