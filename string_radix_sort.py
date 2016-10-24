@@ -65,6 +65,6 @@ def r_sort(a):
 
 	return a 
 
-a = ["b", "a","ab"]
+a = ["abc", "ab","a", "dqwe", "twer", "t"]
 b = r_sort(a)
 print b
